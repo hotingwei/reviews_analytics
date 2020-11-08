@@ -19,3 +19,9 @@ for d in data:
 	if len(d) < 100:
 		new.append(d)
 print('There are', len(new), 'comments that are shorter than 100 words in total.')
+
+good = []
+for d in data:
+	if 'good' in d:
+		good.append(d)
+print('There are', len(good), 'comments that include the word "good".')
