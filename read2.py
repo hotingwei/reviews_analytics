@@ -25,3 +25,41 @@ for d in data: #每一筆留言的內容字母中
 	if 'good' in d: #有包含good 因連在一起所以可以當作搜尋一個單字
 		good.append(d)
 print('There are', len(good), 'comments that include the word "good".')
+
+#words counting
+
+wc = {} # word_count
+for d in data:
+	words = d.split(' ')
+	for word in words:
+		if word in wc:
+			wc[word] += 1
+		else:
+			wc[word] = 1 # 新增新的key進wc字典
+
+for word in wc:
+	if wc[word] > 50000 :
+		print(word, wc[word])
+
+print(len(wc))
+
+while True:
+	word = input('Which word do you want to look for:')
+	if word == 'q':
+		break
+	if word in wc:
+		print(word, 'appears', wc[word], 'times')
+	else:
+		print('The word has not appeared before.')
+
+print('Thanks for using our searching engine.')
+
+
+
+
+
+
+
+
+
+
